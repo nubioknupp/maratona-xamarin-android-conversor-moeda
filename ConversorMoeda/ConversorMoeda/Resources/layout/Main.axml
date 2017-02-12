@@ -37,7 +37,7 @@
         android:text="0"
         android:numeric="decimal"
         android:inputType="number"
-        android:id="@+id/txtValorDolar"
+        android:id="@+id/txtValorReal"
         android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_marginTop="120dp"

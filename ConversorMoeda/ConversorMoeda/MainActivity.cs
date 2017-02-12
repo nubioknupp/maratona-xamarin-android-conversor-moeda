@@ -7,7 +7,6 @@ namespace ConversorMoeda
 	[Activity(Label = "Conversor de Moedas", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -16,11 +15,14 @@ namespace ConversorMoeda
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			//Button button = FindViewById<Button>(Resource.Id.myButton);
-			 
-			//button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			var cmdConverter = FindViewById<Button>(Resource.Id.cmdConverter);
+			var txtValorDolar = FindViewById<EditText>(Resource.Id.txtValorDolar);
+			var txtValorReal = FindViewById<EditText>(Resource.Id.txtValorReal);
+
+			cmdConverter.Click += delegate 
+			{
+				txtValorReal.Text = (double.Parse(txtValorDolar.Text) * 3.11) + "";
+			};
 		}
 	}
 }
